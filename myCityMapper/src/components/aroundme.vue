@@ -1,12 +1,14 @@
 <template>
 <div class="hello">
   <h1>{{ msg }}</h1>
+  <iframe>
+  </iframe>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'aroundme',
+  name: 'AroundMe',
   data () {
     return {
       msg: 'AROUNDME Vue.js App'
