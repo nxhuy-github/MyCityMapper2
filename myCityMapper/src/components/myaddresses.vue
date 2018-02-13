@@ -2,17 +2,20 @@
   <div id="myaddresses">
     <h1>Mes adresses</h1>
     <address-list v-bind:addresses="addresses"></address-list>
+    <add-address v-on:add-address="addAddress"></add-address>
   </div>
 </template>
 
 <script>
 import AddressList from './AddressList'
+import AddAddress from './AddAddress'
 
 export default {
   name: 'MyAddresses',
   components: {
     // Reference to the AddressList component
-    AddressList
+    AddressList,
+    AddAddress
   },
   data () {
     return {
@@ -33,6 +36,11 @@ export default {
         address: '43, bd du 11 novembre 1918, 69622 Villeurbanne cedex',
         favorite: false
       }]
+    }
+  },
+  methods: {
+    addAddress: function (newAddress) {
+      this.addresses.push(newAddress)
     }
   }
 }
