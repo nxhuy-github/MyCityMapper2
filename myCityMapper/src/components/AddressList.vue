@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      Counter: {{ counter }}
+    </div>
     <div class='' v-for="address in addresses" :key="address.id">
         <address-item v-bind:address="address"></address-item>
     </div>
@@ -16,6 +19,9 @@ export default {
   computed: {
     addresses: function () {
       return this.$store.getters.addresses
+    },
+    counter: function () {
+      return this.$store.getters.counter
     }
   }
 }

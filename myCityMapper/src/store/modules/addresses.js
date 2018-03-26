@@ -20,11 +20,13 @@ const state = {
     name: 'AML',
     address: '43, bd du 11 novembre 1918, 69622 Villeurbanne cedex',
     favorite: false
-  }]
+  }],
+  counter: 4
 }
 
 const getters = {
-  addresses: state => state.addresses
+  addresses: state => state.addresses,
+  counter: state => state.counter
 }
 
 const mutations = {
@@ -32,12 +34,20 @@ const mutations = {
     state.addresses.push(
       address
     )
+    state.counter = state.counter + 1
+  },
+  DELETE_ADDRESS (state, id) {
+    state.addresses.splice(id, 1)
+    state.counter = state.counter - 1
   }
 }
 
 const actions = {
   addAddress ({commit}, address) {
     commit('ADD_ADDRESS', address)
+  },
+  deleteAddress ({commit}, id) {
+    commit('DELETE_ADDRESS', id)
   }
 }
 
