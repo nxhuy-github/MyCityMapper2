@@ -1,13 +1,18 @@
 <template>
-  <p class='content'>
-    <em class='label'>
-        {{ address.name }}
-    </em>
-    <span class='desc'>
-        {{ address.address }}
-    </span>
-    <button v-on:click="deleteAddress">Supprimer</button>
-  </p>
+  <div class="text-xs-center">
+    <p class='content'>
+      <em class='label'>
+          {{ address.name }}
+      </em>
+      <span class='desc'>
+          {{ address.address }}
+      </span>
+      <!-- <button v-on:click="deleteAddress">Supprimer</button> -->
+      <v-btn fab dark small color="primary" v-on:click="deleteAddress">
+        <v-icon dark>remove</v-icon>
+      </v-btn>
+    </p>
+  </div>
 </template>
 
 <script>

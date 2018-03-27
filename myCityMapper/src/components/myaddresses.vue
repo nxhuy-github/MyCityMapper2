@@ -6,7 +6,6 @@
       <address-list></address-list>
     </div>
     <div>
-      <h1>Ajouter une addresse</h1>
       <!-- <add-address v-on:add-address="addAddress"></add-address> -->
       <add-address></add-address>
     </div>

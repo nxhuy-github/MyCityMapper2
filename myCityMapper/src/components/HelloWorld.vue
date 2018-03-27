@@ -10,18 +10,6 @@
         <input id="submit" type="submit" value="Rechercher"/>
       </form>
     </div>
-    <hr>
-    <div>
-      <router-link to="/aroundme">Autour de moi</router-link>
-    </div>
-    <hr>
-    <div>
-      <router-link to="">Maison</router-link>
-      <button>définir</button><br>
-      <router-link to="">Travail</router-link>
-      <button>définir</button><br>
-      <router-link to="/myaddresses">Ajouter pointera</router-link>
-    </div>
   </div>
 </template>
 

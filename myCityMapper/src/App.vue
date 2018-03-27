@@ -1,12 +1,18 @@
 <template>
   <div id="app">
     <router-view/>
+    <bottom-nav/>
   </div>
 </template>
 
 <script>
+import BottomNav from './components/BottomNav'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    BottomNav
+  }
 }
 </script>
 
