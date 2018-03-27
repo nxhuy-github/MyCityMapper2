@@ -1,14 +1,14 @@
 <template>
   <div id="myaddresses">
-    <div>
+    <v-container fluid>
       <h1>Mes adresses</h1>
       <!-- <address-list v-bind:addresses="addresses"></address-list> -->
       <address-list></address-list>
-    </div>
-    <div>
+    </v-container>
+    <v-container fluid>
       <!-- <add-address v-on:add-address="addAddress"></add-address> -->
       <add-address></add-address>
-    </div>
+    </v-container>
   </div>
 </template>
 

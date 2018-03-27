@@ -37,7 +37,7 @@ const mutations = {
     state.counter = state.counter + 1
   },
   DELETE_ADDRESS (state, id) {
-    state.addresses.splice(id, 1)
+    state.addresses.splice(id.id, 1)
     state.counter = state.counter - 1
   }
 }

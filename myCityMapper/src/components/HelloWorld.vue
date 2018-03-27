@@ -1,16 +1,21 @@
 <template>
-  <div class="hello">
-    <div>
-      <h1>Lyon transit</h1>
-    </div>
-    <div>
-      <form>
-        <input id="depart" name="depart" type="text" placeholder="Départ"/><br>
-        <input id="arrivee" name="arrivee" type="text" placeholder="Arrivée"/><br>
-        <input id="submit" type="submit" value="Rechercher"/>
-      </form>
-    </div>
-  </div>
+<v-flex xs6 md4 offset-md4>
+  <v-subheader>LYON TRANSIT</v-subheader>
+  <v-form >
+    <v-text-field
+      label="Départ"
+      v-model="depart"
+      :counter="10"
+      required
+    ></v-text-field>
+    <v-text-field
+      label="Arrivée"
+      v-model="arrivee"
+      required
+    ></v-text-field>
+    <v-btn >Rechercher</v-btn>
+  </v-form>
+</v-flex>
 </template>
 
 <script>
@@ -18,7 +23,9 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      depart: '',
+      arrivee: ''
     }
   }
 }
