@@ -1,12 +1,11 @@
 <template>
-  <v-layout row wrap>
+  <v-layout align-center justify-center>
     <v-flex xs6 md4 offset-md4>
       <v-form ref="form" lazy-validation>
         <v-text-field
           label="Name"
           v-model="name"
           :rules="[() => name.length > 0 || 'This field is required']"
-          :counter="10"
           required
         ></v-text-field>
         <v-text-field
@@ -15,12 +14,7 @@
           :rules="[() => address.length > 0 || 'This field is required']"
           required
         ></v-text-field>
-        <v-checkbox
-          label="Do you like it?"
-          v-model="favorite"
-          required
-        ></v-checkbox>
-        <v-btn @click="createAddress">submit</v-btn>
+        <v-btn @click="createAddress">Ajouter</v-btn>
       </v-form>
     </v-flex>
   </v-layout>

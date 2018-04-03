@@ -1,11 +1,11 @@
 <template>
+<v-layout align-center justify-center>
 <v-flex xs6 md4 offset-md4>
   <v-subheader>LYON TRANSIT</v-subheader>
   <v-form >
     <v-text-field
       label="Départ"
       v-model="depart"
-      :counter="10"
       required
     ></v-text-field>
     <v-text-field
@@ -16,6 +16,7 @@
     <v-btn >Rechercher</v-btn>
   </v-form>
 </v-flex>
+ </v-layout>
 </template>
 
 <script>

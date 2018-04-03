@@ -1,7 +1,24 @@
 <template>
   <div id="app">
-    <router-view/>
-    <bottom-nav/>
+  <v-app>
+   <v-content>
+    <v-container fluid>
+     <v-container grid-list-md text-xs-center>
+      <v-layout row wrap>
+        <v-flex xs12>
+          <router-view></router-view>
+        </v-flex>
+      </v-layout>
+     </v-container>
+     </v-container>
+    </v-content>
+
+    <v-flex xs12>
+      <bottom-nav/>
+    </v-flex>
+
+
+  </v-app>
   </div>
 </template>
 
@@ -23,6 +40,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>
