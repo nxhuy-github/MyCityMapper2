@@ -12,12 +12,9 @@
      </v-container>
      </v-container>
     </v-content>
-
     <v-flex xs12>
       <bottom-nav/>
     </v-flex>
-
-
   </v-app>
   </div>
 </template>

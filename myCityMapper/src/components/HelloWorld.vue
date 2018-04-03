@@ -1,5 +1,5 @@
 <template>
-<v-layout align-center justify-center>
+<v-layout row wrap>
 <v-flex xs6 md4 offset-md4>
   <v-subheader>LYON TRANSIT</v-subheader>
   <v-form >
