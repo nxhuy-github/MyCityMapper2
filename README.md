@@ -22,10 +22,10 @@ Les moteurs de l'application sont:
 
 ### Dépendances Globales
 
-* "vue": "^2.5.2"
-* "vue-router": "^3.0.1"
-* "vuetify": "^1.0.10"
-* "vuex": "^3.0.1"
+* "vue": "2.5.2"
+* "vue-router": "3.0.1"
+* "vuetify": "1.0.10"
+* "vuex": "3.0.1"
 
 ### Installation
 
