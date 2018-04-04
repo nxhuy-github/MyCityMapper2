@@ -2,11 +2,9 @@
   <div id="myaddresses">
     <v-container fluid>
       <h1>Mes adresses</h1>
-      <!-- <address-list v-bind:addresses="addresses"></address-list> -->
       <address-list></address-list>
     </v-container>
     <v-container fluid>
-      <!-- <add-address v-on:add-address="addAddress"></add-address> -->
       <add-address></add-address>
     </v-container>
   </div>
@@ -23,15 +21,6 @@ export default {
     AddressList,
     AddAddress
   }
-  // data () {
-  //   return {
-  //   }
-  // },
-  // methods: {
-  //   addAddress: function (newAddress) {
-  //     this.addresses.push(newAddress)
-  //   }
-  // }
 }
 </script>
 

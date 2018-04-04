@@ -1,7 +1,4 @@
 <template>
-    <!-- <div class='' v-for="address in addresses" :key="address.id">
-        <address-item v-bind:address="address"></address-item>
-    </div> -->
     <v-layout row>
       <v-flex xs12 sm6 offset-sm3>
         <v-card>
@@ -29,7 +26,6 @@
 <script type = "text/javascript" >
 import AddressItem from './AddressItem'
 export default {
-  // props: ['addresses'],
   components: {
     AddressItem
   },

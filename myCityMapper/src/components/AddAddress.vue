@@ -39,11 +39,6 @@ export default {
       const name = this.name
       const address = this.address
       const favorite = this.favorite
-      // this.$emit('add-address', {
-      //   name: name,
-      //   address: address,
-      //   favorite: true
-      // })
       this.$store.dispatch('addAddress', {
         name: name,
         address: address,
