@@ -15,7 +15,7 @@
           required
         ></v-text-field>
         <v-checkbox
-          label="Does this is your favorite address?"
+          label="Is this your favorite address?"
           v-model="favorite"
         ></v-checkbox>
         <v-btn @click="createAddress">Ajouter</v-btn>
