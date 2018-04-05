@@ -2,7 +2,8 @@
 <v-layout row wrap>
 <v-flex xs6 md4 offset-md4>
   <v-subheader>LYON TRANSIT</v-subheader>
-  <v-form >
+  <place-input label="Départ"></place-input>
+  <!-- <v-form >
     <v-text-field
       label="Départ"
       v-model="depart"
@@ -14,14 +15,19 @@
       required
     ></v-text-field>
     <v-btn >Rechercher</v-btn>
-  </v-form>
+  </v-form> -->
 </v-flex>
  </v-layout>
 </template>
 
 <script>
+import PlaceInput from './PlaceInput'
+
 export default {
   name: 'HelloWorld',
+  components: {
+    PlaceInput
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
