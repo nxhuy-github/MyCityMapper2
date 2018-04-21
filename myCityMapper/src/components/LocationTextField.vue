@@ -41,22 +41,20 @@ export default {
       val && this.querySelections(val)
     }
   },
-
   computed: {
     select: {
       get () {
-         return this.$store.getters[this.storeProperty][name]
-         },
-         set (v) {
-         const name = v.name
-         const address = v.name
-         const favorite = true
-         var ob = {name: name, address: address, favorite: favorite};
-         this.$store.dispatch(this.storeProperty, ob)
-         }
+        return this.$store.getters[this.storeProperty][name]
+      },
+      set (v) {
+        const id = v.id
+        const name = v.name
+        const quality = v.quality
+        var ob = {id, name, quality}
+        this.$store.dispatch(this.storeProperty, ob)
       }
-    },
-
+    }
+  },
   methods: {
     querySelections: function (val) {
       this.loading = true

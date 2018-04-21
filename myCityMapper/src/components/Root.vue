@@ -4,7 +4,7 @@
   <v-subheader>LYON TRANSIT</v-subheader>
   <location-text-field label="Départ" storeProperty="departure"></location-text-field>
   <location-text-field label="Arrivé" storeProperty="arrival"></location-text-field>
-
+  <v-btn @click="search">Rechercher</v-btn>
   <!-- <v-form >
     <v-text-field
       label="Départ"
@@ -16,18 +16,17 @@
       v-model="arrivee"
       required
     ></v-text-field>
-    <v-btn >Rechercher</v-btn>
   </v-form> -->
 </v-flex>
  </v-layout>
 </template>
 
 <script>
-//import PlaceInput from './PlaceInput'
-import LocationTextField from './LocationTextField';
+// import PlaceInput from './PlaceInput'
+import LocationTextField from './LocationTextField'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Root',
   components: {
     LocationTextField
   },
@@ -35,8 +34,31 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      depart: '',
-      arrivee: ''
+      departure: '',
+      arrival: ''
+    }
+  },
+  methods: {
+    search () {
+      const from = this.$store.getters.departure[0].id
+      const to = this.$store.getters.arrival[0].id
+      let mesEntetes = new Headers()
+      mesEntetes.append('Authorization', '457fd3bc-c66d-4d87-b822-913ea8a8f610')
+      let monInit = {
+        method: 'GET',
+        headers: mesEntetes
+      }
+      let maRequete = `http://api.navitia.io/v1/coverage/fr-se/journeys?from=${from}&to=${to}`
+      fetch(maRequete, monInit)
+        .then(function (reponse) {
+          return reponse.json()
+        })
+        .catch(function (error) {
+          console.log('An error has occured ', error)
+        })
+        .then(function (reponse) {
+          console.log(reponse)
+        })
     }
   }
 }

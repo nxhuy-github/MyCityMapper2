@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Root from '@/components/Root'
 import AroundMe from '@/components/AroundMe'
 import MyAddresses from '@/components/MyAddresses'
 
@@ -10,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Root',
+      component: Root
     },
     {
       path: '/aroundme',

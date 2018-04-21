@@ -22,8 +22,8 @@ const state = {
     favorite: false
   }],
   counter: 4,
-  departure: [{name: 'Paris', address: 'ABC XYZ', favorite: false }],
-  arrival: [{name: 'Sai Gon', address: 'HCJ XYZ', favorite: false }]
+  departure: [],
+  arrival: []
 }
 
 const getters = {
@@ -41,16 +41,16 @@ const mutations = {
     state.counter = state.counter + 1
   },
   ADD_DEPARTURE (state, departure) {
+    state.departure = []
     state.departure.push(
       departure
     )
-    state.counter = state.counter + 1
   },
   ADD_ARRIVAL (state, arrival) {
+    state.arrival = []
     state.arrival.push(
       arrival
     )
-    state.counter = state.counter + 1
   },
   DELETE_ADDRESS (state, id) {
     state.addresses.splice(id.id, 1)
