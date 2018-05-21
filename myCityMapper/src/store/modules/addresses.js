@@ -23,17 +23,22 @@ const state = {
   }],
   counter: 4,
   departure: [],
-  arrival: []
+  arrival: [],
+  journeys: []
 }
 
 const getters = {
   addresses: state => state.addresses,
   counter: state => state.counter,
   departure: state => state.departure,
-  arrival: state => state.arrival
+  arrival: state => state.arrival,
+  journeys: state => state.journeys
 }
 
 const mutations = {
+  JOURNEYS (state, journeys) {
+    state.journeys = journeys
+  },
   ADD_ADDRESS (state, address) {
     state.addresses.push(
       address
@@ -70,6 +75,9 @@ const actions = {
   },
   deleteAddress ({commit}, id) {
     commit('DELETE_ADDRESS', id)
+  },
+  journeys ({commit}, journeys) {
+    commit('JOURNEYS', journeys)
   }
 }
 

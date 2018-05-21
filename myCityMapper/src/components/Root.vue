@@ -5,32 +5,21 @@
   <location-text-field label="Départ" storeProperty="departure"></location-text-field>
   <location-text-field label="Arrivé" storeProperty="arrival"></location-text-field>
   <v-btn @click="search">Rechercher</v-btn>
-  <!-- <v-form >
-    <v-text-field
-      label="Départ"
-      v-model="depart"
-      required
-    ></v-text-field>
-    <v-text-field
-      label="Arrivée"
-      v-model="arrivee"
-      required
-    ></v-text-field>
-  </v-form> -->
+  <route />
 </v-flex>
  </v-layout>
 </template>
 
 <script>
-// import PlaceInput from './PlaceInput'
+import Route from './Route'
 import LocationTextField from './LocationTextField'
 
 export default {
   name: 'Root',
   components: {
-    LocationTextField
+    LocationTextField,
+    Route
   },
-
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
@@ -49,6 +38,7 @@ export default {
         headers: mesEntetes
       }
       let maRequete = `http://api.navitia.io/v1/coverage/fr-se/journeys?from=${from}&to=${to}`
+      let that = this
       fetch(maRequete, monInit)
         .then(function (reponse) {
           return reponse.json()
@@ -57,7 +47,10 @@ export default {
           console.log('An error has occured ', error)
         })
         .then(function (reponse) {
-          console.log(reponse)
+          if (reponse.journeys !== undefined) {
+            // console.log(reponse)
+            that.$store.dispatch('journeys', reponse.journeys)
+          }
         })
     }
   }
