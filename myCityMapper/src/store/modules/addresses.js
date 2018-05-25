@@ -21,41 +21,20 @@ const state = {
     address: '43, bd du 11 novembre 1918, 69622 Villeurbanne cedex',
     favorite: false
   }],
-  counter: 4,
-  departure: [],
-  arrival: [],
-  journeys: []
+  counter: 4
 }
 
 const getters = {
   addresses: state => state.addresses,
-  counter: state => state.counter,
-  departure: state => state.departure,
-  arrival: state => state.arrival,
-  journeys: state => state.journeys
+  counter: state => state.counter
 }
 
 const mutations = {
-  JOURNEYS (state, journeys) {
-    state.journeys = journeys
-  },
   ADD_ADDRESS (state, address) {
     state.addresses.push(
       address
     )
     state.counter = state.counter + 1
-  },
-  ADD_DEPARTURE (state, departure) {
-    state.departure = []
-    state.departure.push(
-      departure
-    )
-  },
-  ADD_ARRIVAL (state, arrival) {
-    state.arrival = []
-    state.arrival.push(
-      arrival
-    )
   },
   DELETE_ADDRESS (state, id) {
     state.addresses.splice(id.id, 1)
@@ -67,17 +46,8 @@ const actions = {
   addAddress ({commit}, address) {
     commit('ADD_ADDRESS', address)
   },
-  departure ({commit}, departure) {
-    commit('ADD_DEPARTURE', departure)
-  },
-  arrival ({commit}, arrival) {
-    commit('ADD_ARRIVAL', arrival)
-  },
   deleteAddress ({commit}, id) {
     commit('DELETE_ADDRESS', id)
-  },
-  journeys ({commit}, journeys) {
-    commit('JOURNEYS', journeys)
   }
 }
 

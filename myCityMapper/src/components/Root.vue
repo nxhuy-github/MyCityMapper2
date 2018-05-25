@@ -1,24 +1,28 @@
 <template>
-<v-layout row wrap>
-<v-flex xs6 md4 offset-md4>
-  <v-subheader>LYON TRANSIT</v-subheader>
-  <location-text-field label="Départ" storeProperty="departure"></location-text-field>
-  <location-text-field label="Arrivé" storeProperty="arrival"></location-text-field>
-  <v-btn @click="search">Rechercher</v-btn>
-  <route />
-</v-flex>
- </v-layout>
+  <v-layout row wrap>
+    <v-flex xs6>
+      <v-card >
+        <v-subheader>LYON TRANSIT</v-subheader>
+        <location-text-field label="Départ" storeProperty="departure"></location-text-field>
+        <location-text-field label="Arrivé" storeProperty="arrival"></location-text-field>
+        <v-btn @click="search">Rechercher</v-btn>
+      </v-card>
+    </v-flex>
+    <v-flex xs6>
+      <journeys />
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-import Route from './Route'
+import Journeys from './Journeys'
 import LocationTextField from './LocationTextField'
 
 export default {
   name: 'Root',
   components: {
     LocationTextField,
-    Route
+    Journeys
   },
   data () {
     return {
@@ -47,8 +51,8 @@ export default {
           console.log('An error has occured ', error)
         })
         .then(function (reponse) {
+          console.log(reponse)
           if (reponse.journeys !== undefined) {
-            // console.log(reponse)
             that.$store.dispatch('journeys', reponse.journeys)
           }
         })

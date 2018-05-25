@@ -4,23 +4,28 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  id: null,
-  stops: []
+  lines: []
 }
 
 const getters = {
-  id: state => state.id,
-  stops: state => state.stops
+  lines: state => state.lines
 }
 
 const mutations = {
   LOAD_LINES (state) {
     console.log('Loadlines...!')
+    for (let i = 0; i < localStorage.length; i++) {
+      let id = localStorage.key(i)
+      if (id !== 'loglevel:webpack-dev-server') {
+        let obj = {id: id, stops: localStorage.getItem(id)}
+        state.lines.push(obj)
+      }
+    }
   },
   ADD_LINE (state, line) {
-    state.id = line.id
-    state.stops = line.stops
-    localStorage.setItem(state.id, JSON.stringify(state.stops))
+    let obj = {id: line.id, stops: line.stops}
+    state.lines.push(obj)
+    localStorage.setItem(line.id, JSON.stringify(line.stops))
   }
 }
 

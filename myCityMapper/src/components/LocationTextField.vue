@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
         <v-layout row wrap>
-            <v-flex xs6>
+            <v-flex xs10>
                 <v-select
                     v-bind:label="label"
                     autocomplete
@@ -64,7 +64,7 @@ export default {
         method: 'GET',
         headers: mesEntetes
       }
-      let maRequete = 'http://api.navitia.io/v1/coverage/fr-se/places?q=lieu'
+      let maRequete = `http://api.navitia.io/v1/coverage/fr-se/places?q=${val}`
       let that = this
       fetch(maRequete, monInit).then(function (reponse) {
         return reponse.json()
