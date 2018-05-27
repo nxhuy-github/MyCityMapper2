@@ -2,10 +2,6 @@
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
-        <v-toolbar color="light-blue" dark>
-          <v-toolbar-side-icon></v-toolbar-side-icon>
-          <v-toolbar-title>Lyon Transit</v-toolbar-title>
-        </v-toolbar>
         <v-list two-line subheader>
           <v-list-tile v-for="item in lines" :key="item.id" avatar >
             <v-list-tile-content>

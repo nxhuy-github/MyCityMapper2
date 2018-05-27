@@ -1,34 +1,26 @@
 <template>
-  <v-navigation-drawer :mini-variant.sync="mini" v-model="drawer" stateless hide-overlay>
-    <v-toolbar flat class="transparent">
-      <v-list class="pa-0">
-        <v-list-tile avatar>
-          <v-list-tile-avatar>
-            <img src="../assets/only-lyon.jpg">
-          </v-list-tile-avatar>
-          <v-list-tile-content>
-            <v-list-tile-title>Lyon Transit</v-list-tile-title>
-          </v-list-tile-content>
+  <v-layout row wrap>
+    <v-navigation-drawer :clipped="clipped" v-model="drawer" enable-resize-watcher app dark class="primary lighten-3">
+      <v-list>
+        <v-list-tile v-for="item in items" :key="item.title" @click="navigateTo({name: item.route})">
           <v-list-tile-action>
-            <v-btn icon @click.native.stop="mini = !mini">
-              <v-icon>chevron_left</v-icon>
-            </v-btn>
+            <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title >{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-toolbar>
-    <v-list class="pt-0" dense>
-      <v-divider></v-divider>
-      <v-list-tile v-for="item in items" :key="item.title" @click="navigateTo({name: item.route})">
-        <v-list-tile-action>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
-  </v-navigation-drawer>
+    </v-navigation-drawer>
+      <v-toolbar fixed app :clipped-left="clipped" color="light-blue" dark>
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-toolbar-title>Lyon Transit</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn icon>
+          <v-icon>more_vert</v-icon>
+        </v-btn>
+      </v-toolbar>
+  </v-layout>
 </template>
 
 <script>
@@ -44,8 +36,7 @@ export default {
         { title: 'Travail', icon: 'work', route: '' },
         { title: 'Lignes', icon: 'directions', route: 'Lines' }
       ],
-      mini: true,
-      right: null
+      clipped: false
     }
   },
   methods: {

@@ -1,16 +1,10 @@
 <template>
   <div id="app">
-    <v-app>
+    <v-app light>
+      <navigation-drawer/>
       <v-content>
         <v-container fluid>
-          <v-layout row wrap>
-            <v-flex xs3>
-              <navigation-drawer/>
-            </v-flex>
-            <v-flex xs9>
-              <router-view></router-view>
-            </v-flex>
-          </v-layout>
+          <router-view></router-view>
         </v-container>
       </v-content>
     </v-app>
