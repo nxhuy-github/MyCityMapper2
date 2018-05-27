@@ -12,13 +12,11 @@
 </template>
 
 <script>
-import BottomNav from './components/BottomNav'
 import NavigationDrawer from './components/NavigationDrawer'
 
 export default {
   name: 'App',
   components: {
-    BottomNav,
     NavigationDrawer
   }
 }
