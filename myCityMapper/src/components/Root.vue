@@ -4,6 +4,9 @@
       <v-card >
         <v-subheader>LYON TRANSIT</v-subheader>
         <location-text-field label="Départ" storeProperty="departure"></location-text-field>
+        <v-btn icon ripple @click="getMyLocation">
+          <v-icon color="blue lighten-1">my_location</v-icon>
+        </v-btn>
         <location-text-field label="Arrivé" storeProperty="arrival"></location-text-field>
         <v-btn @click="search">Rechercher</v-btn>
       </v-card>
@@ -17,6 +20,7 @@
 <script>
 import Journeys from './Journeys'
 import LocationTextField from './LocationTextField'
+import modernizr from 'modernizr'
 
 export default {
   name: 'Root',
@@ -31,7 +35,26 @@ export default {
       arrival: ''
     }
   },
+  created: function () {
+    if (modernizr.geolocation) {
+      console.log('geolocation')
+    }
+    if (modernizr.localstorage) {
+      console.log('local storage')
+    }
+  },
   methods: {
+    getMyLocation () {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          let lat = position.coords.latitude
+          let lon = position.coords.longitude
+          console.log('getMyLocation: ', lat, lon)
+        })
+      } else {
+        console.log('Your browser does not support GeoLocation')
+      }
+    },
     search () {
       const from = this.$store.getters.departure[0].id
       const to = this.$store.getters.arrival[0].id

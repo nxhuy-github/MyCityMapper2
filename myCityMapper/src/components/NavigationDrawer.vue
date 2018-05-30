@@ -34,7 +34,8 @@ export default {
         { title: 'Ajouter pointer', icon: 'note_add', route: 'MyAddresses' },
         { title: 'Maison', icon: 'face', route: '' },
         { title: 'Travail', icon: 'work', route: '' },
-        { title: 'Lignes', icon: 'directions', route: 'Lines' }
+        { title: 'Lignes', icon: 'directions', route: 'Lines' },
+        { title: 'Video', icon: 'videocam', route: 'Video' }
       ],
       clipped: false
     }
