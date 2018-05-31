@@ -12,8 +12,8 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-      <v-toolbar fixed app :clipped-left="clipped" color="light-blue" dark>
-        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    <v-toolbar fixed app :clipped-left="clipped" color="light-blue" dark>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title>Lyon Transit</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon>

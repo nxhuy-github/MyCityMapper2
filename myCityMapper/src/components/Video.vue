@@ -3,7 +3,7 @@
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
       <v-btn @click="startVideo">Start Video</v-btn>
-      <video id="video" width=auto height=auto autoplay></video>
+      <video id="video" width=100% height=auto autoplay></video>
       <img id="fleche" width="128" height="128" src="../assets/fleche-haut.jpg"/>
       <!-- <v-btn id="snap" @click="snapPhoto">Snap Photo</v-btn> -->
       <canvas id="canvas" width=auto height=auto></canvas>

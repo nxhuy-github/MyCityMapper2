@@ -3,7 +3,7 @@
     <v-flex xs12 sm6 offset-sm3>
       <div class="hello">
         <iframe
-          width=auto
+          width=100%
           height=auto
           frameborder="0" style="border:0"
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBRiwkCHOWtJxdxys2GxyzEqxugRV1fP9g

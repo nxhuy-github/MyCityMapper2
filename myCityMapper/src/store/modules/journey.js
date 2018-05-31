@@ -30,6 +30,9 @@ const mutations = {
     state.arrival.push(
       arrival
     )
+  },
+  RESET (state) {
+    state.departure = state.arrival = []
   }
 }
 
@@ -42,6 +45,9 @@ const actions = {
   },
   arrival ({commit}, arrival) {
     commit('ADD_ARRIVAL', arrival)
+  },
+  reset ({commit}) {
+    commit('RESET')
   }
 }
 
