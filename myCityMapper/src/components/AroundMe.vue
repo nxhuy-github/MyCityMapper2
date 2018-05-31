@@ -1,13 +1,17 @@
 <template>
-  <div class="hello">
-    <iframe
-      width="600"
-      height="450"
-      frameborder="0" style="border:0"
-      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBRiwkCHOWtJxdxys2GxyzEqxugRV1fP9g
-        &q=Nautibus,Lyon" allowfullscreen>
-    </iframe>
-  </div>
+  <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <div class="hello">
+        <iframe
+          width=auto
+          height=auto
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBRiwkCHOWtJxdxys2GxyzEqxugRV1fP9g
+            &q=Nautibus,Lyon" allowfullscreen>
+        </iframe>
+      </div>
+      </v-flex>
+  </v-layout>
 </template>
 
 <script>

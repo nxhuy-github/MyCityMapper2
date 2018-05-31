@@ -39,9 +39,6 @@ export default {
     if (modernizr.geolocation) {
       console.log('geolocation')
     }
-    if (modernizr.localstorage) {
-      console.log('local storage')
-    }
   },
   methods: {
     getMyLocation () {

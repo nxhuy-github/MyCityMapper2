@@ -1,11 +1,15 @@
 <template>
-  <v-layout>
-    <v-btn @click="startVideo">Start Video</v-btn>
-    <video id="video" width="640" height="480" autoplay></video>
-    <img id="fleche" width="128" height="128" src="../assets/fleche-haut.jpg"/>
-    <v-btn id="snap" @click="snapPhoto">Snap Photo</v-btn>
-    <canvas id="canvas" width="640" height="480"></canvas>
+<v-container fluid>
+  <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-btn @click="startVideo">Start Video</v-btn>
+      <video id="video" width=auto height=auto autoplay></video>
+      <img id="fleche" width="128" height="128" src="../assets/fleche-haut.jpg"/>
+      <!-- <v-btn id="snap" @click="snapPhoto">Snap Photo</v-btn> -->
+      <canvas id="canvas" width=auto height=auto></canvas>
+    </v-flex>
   </v-layout>
+</v-container>
 </template>
 
 <script>

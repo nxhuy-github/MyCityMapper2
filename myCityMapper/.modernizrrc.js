@@ -6,11 +6,11 @@ module.exports = {
   ],
   "feature-detects": [
     "geolocation",
-    "devicemotiondeviceorientation",
     "pointerevents",
-    "localstorage",
-    "vibrate",
+    "storage/localstorage",
+    "vibration",
     "canvas",
-    "batteryapi"
+    "battery",
+    "event/deviceorientation-motion"
   ]
 };
