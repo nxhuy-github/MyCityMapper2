@@ -115,6 +115,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
+        from: path.resolve(__dirname, '../pwabuilder-sw.js'),
+        to: 'pwabuilder-sw.js',
+        toType: 'file'  
+      },
+      {
         from: path.resolve(__dirname, '../static'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
