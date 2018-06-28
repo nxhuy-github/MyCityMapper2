@@ -4,9 +4,74 @@
     <meta name="theme-color" content="#317EFB"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link
+    rel="preload"
+    as="style"
+    onload="this.rel = 'stylesheet'"
+    href='https://fonts.googleapis.com/css?family=Roboto:100,900|Material+Icons'>
+
+    <noscript>
+      <link
+      rel="stylesheet"
+      href='https://fonts.googleapis.com/css?family=Roboto:400,600|Material+Icons'>
+    </noscript>
+
     <link rel="manifest" href="/manifest.json">
     <title>mycitymapper</title>
+    <style>
+    @keyframes spinner {
+      100% {
+        transform: rotate(3600deg);
+      }
+    }
+
+    .loader {
+      border: 16px solid #f3f3f3; /* Light grey */
+      border-top: 16px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-container {
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      top: 50vh;
+      transform: translateY(-50%);
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      transition-origin: 50% 50%;
+    }
+    .spinner-center {
+      display: inline-block;
+      position: absolute;
+      margin-left: -100px;
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      content: '';
+    }
+
+    .loading-text {
+      position: relative;
+      z-index: 1;
+      font-size: 1.5rem;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin-left: 0.5em;
+    }
+    </style>
     <script>
       // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
       // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
@@ -25,12 +90,19 @@
       <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
         Sorry, but app is not available without javascript
       </h3>
-    </noscript>    
+    </noscript>
   </head>
   <body>
     <div>
-      <v-app id="app">
 
+      <v-app id="app">
+        <div class="loading-container">
+          <div class="spinner"></div>
+          <div class="spinner-center">
+            <div class="loader"></div>
+          </div>
+          <div class="loading-text">Loading...</div>
+        </div>
       </v-app>
     </div>
     <!-- built files will be auto injected -->
