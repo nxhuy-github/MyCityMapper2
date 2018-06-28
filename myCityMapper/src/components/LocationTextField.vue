@@ -2,7 +2,7 @@
         <v-layout row wrap>
             <v-flex xs12 sm6 offset-sm3>
                 <v-select
-                    v-bind:label="label"
+                    v-bind:aria-label="label"
                     autocomplete
                     v-bind:loading="loading"
                     v-bind:items="items"
@@ -62,7 +62,7 @@ export default {
         method: 'GET',
         headers: mesEntetes
       }
-      let maRequete = `http://api.navitia.io/v1/coverage/fr-se/places?q=${val}`
+      let maRequete = `https://api.navitia.io/v1/coverage/fr-se/places?q=${val}`
       let that = this
       fetch(maRequete, monInit).then(function (reponse) {
         return reponse.json()

@@ -5,7 +5,7 @@
     <v-layout row>
       <v-flex xs12 sm6 offset-sm3>
         <v-card>
-          <v-toolbar color="light-blue" dark>
+          <v-toolbar color="blue-grey darken-3" dark>
             <v-toolbar-title>Counter: {{ counter }}</v-toolbar-title>
           </v-toolbar>
           <v-list>

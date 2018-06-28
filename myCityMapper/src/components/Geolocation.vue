@@ -1,8 +1,8 @@
 <template>
 <v-layout>
   <v-flex v-if="departure">
-  <v-btn icon ripple @click="getMyLocation('departure')">
-    <v-icon color="blue lighten-1">my_location</v-icon>
+  <v-btn icon ripple @click="getMyLocation('departure')" aria-hidden="true">
+    <v-icon color="brown darken-4">my_location</v-icon>
   </v-btn>
   <template v-if="departureLoc !== ''">
     <v-chip close color="teal" text-color="white" @input="remove('departure')">
@@ -14,8 +14,8 @@
   </template>
   </v-flex>
   <v-flex v-else>
-    <v-btn icon ripple @click="getMyLocation('arrival')">
-        <v-icon color="blue lighten-1">my_location</v-icon>
+    <v-btn icon ripple @click="getMyLocation('arrival')" aria-hidden="true">
+        <v-icon color="brown darken-4">my_location</v-icon>
     </v-btn>
     <template v-if="arrivalLoc !== ''">
         <v-chip close color="teal" text-color="white" @input="remove('arrival')">

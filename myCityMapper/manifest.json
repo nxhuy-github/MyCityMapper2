@@ -1,0 +1,18 @@
+{"dir" : "ltr",
+    "lang" : "fi",
+    "name" : "mycitymapper",
+    "scope" : "/",
+    "display" : "standalone",
+    "start_url" : "https://city-mapper.surge.sh/",
+    "short_name" : "mycitymapper",
+    "theme_color" : "#317EFB",
+    "description" : "",
+    "orientation" : "any",
+    "background_color" : "#41f477",
+    "icons" : [
+      {
+        "src": "./static/assets/map.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]}

@@ -115,6 +115,16 @@ const webpackConfig = merge(baseWebpackConfig, {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
+        from: path.resolve(__dirname, '../offline.html'),
+        to: 'offline.html',
+        toType: 'file'  
+      },
+      {
+        from: path.resolve(__dirname, '../manifest.json'),
+        to: 'manifest.json',
+        toType: 'file'  
+      },
+      {
         from: path.resolve(__dirname, '../pwabuilder-sw.js'),
         to: 'pwabuilder-sw.js',
         toType: 'file'  

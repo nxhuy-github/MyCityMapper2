@@ -51,7 +51,7 @@ export default {
         method: 'GET',
         headers: mesEntetes
       }
-      let maRequete = `http://api.navitia.io/v1/coverage/fr-se/journeys?from=${from}&to=${to}`
+      let maRequete = `https://api.navitia.io/v1/coverage/fr-se/journeys?from=${from}&to=${to}`
       let that = this
       fetch(maRequete, monInit)
         .then(function (reponse) {

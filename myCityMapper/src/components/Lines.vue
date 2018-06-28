@@ -10,12 +10,12 @@
             </v-list-tile-content>
             <v-list-tile-action v-if="item.text_color === 'FFFFFF'">
               <v-btn icon ripple @click="getTimeLine(item.id)">
-                <v-icon color="grey lighten-1">cloud_download</v-icon>
+                <v-icon color="grey darken-3">cloud_download</v-icon>
               </v-btn>
             </v-list-tile-action>
             <v-list-tile-action v-else>
               <v-btn icon ripple>
-                <v-icon color="green darken-1">cloud_download</v-icon>
+                <v-icon color="light-blue darken-4">cloud_download</v-icon>
               </v-btn>
             </v-list-tile-action>
           </v-list-tile>

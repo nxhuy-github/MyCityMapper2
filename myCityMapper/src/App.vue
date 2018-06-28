@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <v-app light>
       <navigation-drawer/>
       <v-content>
