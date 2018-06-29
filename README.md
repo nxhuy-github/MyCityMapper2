@@ -27,12 +27,50 @@ Les moteurs de l'application sont:
 * "vuetify": "1.0.10"
 * "vuex": "3.0.1"
 
+### Clonage
+
+Clonez le projet (le plus récent)
+
+```sh
+$ git clone -b rendu-tp8 git@forge.univ-lyon1.fr:p1419771/myCityMapper2.git
+```
+
 ### Installation
 
-Installez les dépendances et devDependencies et démarrez le serveur.
+Installez les dépendances et devDependencies
 
 ```sh
 $ cd myCityMapper
 $ npm install
+```
+
+### Utilisation
+
+* Pour le version développement
+
+```sh
 $ npm run dev
 ```
+
+Lien: http://localhost:8080
+
+* Pour le version production
+
+Si vous n'avez pas [Surge](https://surge.sh)
+(pour déployer le projet, on va utiliser Surge)
+
+```sh
+$ npm install --global surge 
+```
+
+"build" et déployer
+
+```sh
+$ npm run build
+$ cd dist
+$ surge --domain https://votre-domain.surge.sh
+```
+
+Lien: https://votre-domain.surge.sh
+
+
