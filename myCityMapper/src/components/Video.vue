@@ -4,7 +4,9 @@
     <v-flex xs12 sm6 offset-sm3>
       <v-btn @click="startVideo">Start Video</v-btn>
       <video id="video" width=100% height=auto autoplay></video>
-      <img id="fleche" width="128" height="128" src="../assets/fleche-haut.jpg"/>
+      <template v-if="isCliked">
+      <img id="fleche" height=auto src="../assets/up_arrow.png"/>
+      </template>
       <!-- <v-btn id="snap" @click="snapPhoto">Snap Photo</v-btn> -->
       <canvas id="canvas" width=auto height=auto></canvas>
     </v-flex>
@@ -14,8 +16,14 @@
 
 <script>
 export default {
+  data () {
+    return {
+      isCliked: false
+    }
+  },
   methods: {
     startVideo () {
+      this.isCliked = true
       let video = document.getElementById('video')
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
@@ -41,9 +49,10 @@ export default {
 
 <style>
 img#fleche {
-  position: relative;
-  z-index: 10;
-  top: 350px;
-  left: -35%;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
 </style>
