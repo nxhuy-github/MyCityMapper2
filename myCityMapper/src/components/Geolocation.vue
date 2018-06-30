@@ -1,6 +1,6 @@
 <template>
-<v-layout>
-  <v-flex v-if="departure">
+<v-layout row wrap>
+  <v-flex xs12 sm6 offset-sm3 v-if="departure">
   <v-btn icon ripple @click="getMyLocation('departure')" aria-hidden="true">
     <v-icon color="brown darken-4">my_location</v-icon>
   </v-btn>
@@ -13,7 +13,7 @@
     </v-chip>
   </template>
   </v-flex>
-  <v-flex v-else>
+  <v-flex xs12 sm6 offset-sm3 v-else>
     <v-btn icon ripple @click="getMyLocation('arrival')" aria-hidden="true">
         <v-icon color="brown darken-4">my_location</v-icon>
     </v-btn>

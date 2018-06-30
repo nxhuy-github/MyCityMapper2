@@ -46,7 +46,7 @@ $ npm install
 
 ### Utilisation
 
-* Pour le version développement
+* Pour le version de développement
 
 ```sh
 $ npm run dev
@@ -54,10 +54,10 @@ $ npm run dev
 
 Lien: http://localhost:8080
 
-* Pour le version production
+* Pour le version de production
 
+On va utiliser Surge pour déployer l'application
 Si vous n'avez pas [Surge](https://surge.sh)
-(pour déployer le projet, on va utiliser Surge)
 
 ```sh
 $ npm install --global surge 

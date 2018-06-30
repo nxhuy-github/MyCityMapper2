@@ -1,25 +1,25 @@
 <template>
-        <v-layout row wrap>
-            <v-flex xs12 sm6 offset-sm3>
-                <v-select
-                    v-bind:aria-label="label"
-                    autocomplete
-                    v-bind:loading="loading"
-                    v-bind:items="items"
-                    return-object
-                    v-bind:search-input.sync="search"
-                    v-bind:filter="noFilter"
-                    v-model="select"
-                    >
-                    <template slot="selection" slot-scope="data">
-                      {{data.item.name }}
-                    </template>
-                    <template slot="item" slot-scope="data">
-                      {{data.item.name }}
-                    </template>
-                </v-select>
-            </v-flex>
-        </v-layout>
+  <v-layout row wrap>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-select
+        v-bind:aria-label="label"
+        autocomplete
+        v-bind:loading="loading"
+        v-bind:items="items"
+        return-object
+        v-bind:search-input.sync="search"
+        v-bind:filter="noFilter"
+        v-model="select"
+        >
+        <template slot="selection" slot-scope="data">
+          {{data.item.name }}
+        </template>
+        <template slot="item" slot-scope="data">
+          {{data.item.name }}
+        </template>
+      </v-select>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script type = "text/javascript" >
